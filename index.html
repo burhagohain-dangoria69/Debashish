@@ -1,102 +1,934 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Class 10 – Electricity : 30 MCQ Test</title>
-<style>
-    body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:20px;background:#f2f6fc}
-    h2{text-align:center;color:#004d99}
-    .qbox{background:#fff;margin:8px 0;padding:12px;border-radius:6px;box-shadow:0 0 4px rgba(0,0,0,.1)}
-    .qno{font-weight:bold;color:#c00}
-    input[type=radio]{margin-right:6px}
-    .btn{text-align:center;margin-top:20px}
-    button{padding:10px 25px;font-size:16px;background:#004d99;color:#fff;border:none;border-radius:4px;cursor:pointer}
-    button:hover{background:#0066cc}
-    #resultArea{margin-top:30px;background:#fff;padding:15px;border-radius:8px;box-shadow:0 0 6px rgba(0,0,0,.15)}
-    .ok{color:green}.ko{color:red}.na{color:#f90}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11 - Electricity MCQ Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .instructions {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .question {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .options {
+            margin-left: 20px;
+        }
+        
+        .option {
+            margin-bottom: 8px;
+        }
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        #results {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        
+        .results-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+        
+        .correct-answer {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .incorrect-answer {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .unattempted {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .results-question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .correct {
+            background-color: #27ae60;
+        }
+        
+        .incorrect {
+            background-color: #e74c3c;
+        }
+        
+        .unattempted-indicator {
+            background-color: #f39c12;
+        }
+        
+        .summary {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .summary-item {
+            text-align: center;
+        }
+        
+        .summary-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .correct .summary-value {
+            color: #27ae60;
+        }
+        
+        .incorrect .summary-value {
+            color: #e74c3c;
+        }
+        
+        .unattempted-summary .summary-value {
+            color: #f39c12;
+        }
+        
+        .restart-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .explanation {
+            background-color: #f8f9fa;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+    </style>
 </head>
 <body>
-<h2>Class 10 Science – Chapter 11: Electricity (30 MCQ)</h2>
-<form id="quizForm"></form>
-<div class="btn"><button type="button" onclick="showResult()">Submit & Show Result</button></div>
-<div id="resultArea"></div>
+    <div class="container">
+        <header>
+            <h1>MCQ Exercise Sheet</h1>
+            <h2>Chapter 11 – Electricity (Class 10)</h2>
+            <p>Total 30 items: 15 Conceptual questions + 15 Mini-numericals</p>
+        </header>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Choose the one best option (A/B/C/D) for each question.</li>
+                <li>You can review and change your answers before submitting.</li>
+                <li>After submitting, you'll see a detailed result with explanations for all answers.</li>
+            </ul>
+        </div>
+        
+        <form id="mcqTest">
+            <div class="section">
+                <div class="section-title">SECTION-A: CONCEPTUAL (15 × 1 = 15)</div>
+                
+                <div class="question">
+                    <div class="question-number">1. The conventional direction of electric current is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q1" value="A"> A. the direction in which electrons move</div>
+                        <div class="option"><input type="radio" name="q1" value="B"> B. opposite to the direction of motion of electrons</div>
+                        <div class="option"><input type="radio" name="q1" value="C"> C. perpendicular to the direction of motion of electrons</div>
+                        <div class="option"><input type="radio" name="q1" value="D"> D. none of these</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">2. Which device maintains a constant potential difference across a conductor?</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q2" value="A"> A. Ammeter</div>
+                        <div class="option"><input type="radio" name="q2" value="B"> B. Voltmeter</div>
+                        <div class="option"><input type="radio" name="q2" value="C"> C. Cell / Battery</div>
+                        <div class="option"><input type="radio" name="q2" value="D"> D. Rheostat</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">3. A current of 1 A means</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q3" value="A"> A. 1 C of charge flows in 1 h</div>
+                        <div class="option"><input type="radio" name="q3" value="B"> B. 1 electron flows in 1 s</div>
+                        <div class="option"><input type="radio" name="q3" value="C"> C. 1 C of charge flows in 1 s</div>
+                        <div class="option"><input type="radio" name="q3" value="D"> D. 6 × 10¹⁸ electrons flow in 1 h</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">4. The SI unit of electrical resistivity is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q4" value="A"> A. Ω</div>
+                        <div class="option"><input type="radio" name="q4" value="B"> B. Ω m⁻¹</div>
+                        <div class="option"><input type="radio" name="q4" value="C"> C. Ω m</div>
+                        <div class="option"><input type="radio" name="q4" value="D"> D. S m⁻¹</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">5. A wire is stretched to double its length. Its resistance</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q5" value="A"> A. remains same</div>
+                        <div class="option"><input type="radio" name="q5" value="B"> B. becomes 2×</div>
+                        <div class="option"><input type="radio" name="q5" value="C"> C. becomes 4×</div>
+                        <div class="option"><input type="radio" name="q5" value="D"> D. becomes ½×</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">6. Two identical resistors are first joined in series and then in parallel to the same source. The ratio of heat produced in series to parallel is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q6" value="A"> A. 1 : 2</div>
+                        <div class="option"><input type="radio" name="q6" value="B"> B. 1 : 4</div>
+                        <div class="option"><input type="radio" name="q6" value="C"> C. 4 : 1</div>
+                        <div class="option"><input type="radio" name="q6" value="D"> D. 2 : 1</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">7. A fuse wire should have</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q7" value="A"> A. high melting point, high resistivity</div>
+                        <div class="option"><input type="radio" name="q7" value="B"> B. low melting point, low resistivity</div>
+                        <div class="option"><input type="radio" name="q7" value="C"> C. low melting point, high resistivity</div>
+                        <div class="option"><input type="radio" name="q7" value="D"> D. high melting point, low resistivity</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">8. The power of an appliance is 1 kW. Energy consumed in 2 h is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q8" value="A"> A. 1 kWh</div>
+                        <div class="option"><input type="radio" name="q8" value="B"> B. 2 kWh</div>
+                        <div class="option"><input type="radio" name="q8" value="C"> C. 0.5 kWh</div>
+                        <div class="option"><input type="radio" name="q8" value="D"> D. 3.6 kWh</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">9. A 100 W–220 V bulb is connected to 110 V. The power consumed will be</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q9" value="A"> A. 100 W</div>
+                        <div class="option"><input type="radio" name="q9" value="B"> B. 75 W</div>
+                        <div class="option"><input type="radio" name="q9" value="C"> C. 50 W</div>
+                        <div class="option"><input type="radio" name="q9" value="D"> D. 25 W</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">10. Which does NOT represent electric power?</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q10" value="A"> A. I²R</div>
+                        <div class="option"><input type="radio" name="q10" value="B"> B. V²/R</div>
+                        <div class="option"><input type="radio" name="q10" value="C"> C. IR²</div>
+                        <div class="option"><input type="radio" name="q10" value="D"> D. VI</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">11. When n equal resistors R are connected in parallel, their equivalent resistance is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q11" value="A"> A. nR</div>
+                        <div class="option"><input type="radio" name="q11" value="B"> B. R/n</div>
+                        <div class="option"><input type="radio" name="q11" value="C"> C. Rⁿ</div>
+                        <div class="option"><input type="radio" name="q11" value="D"> D. n/R</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">12. A wire of resistance 4 Ω is bent into a closed loop; resistance across any diameter is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q12" value="A"> A. 4 Ω</div>
+                        <div class="option"><input type="radio" name="q12" value="B"> B. 2 Ω</div>
+                        <div class="option"><input type="radio" name="q12" value="C"> C. 1 Ω</div>
+                        <div class="option"><input type="radio" name="q12" value="D"> D. 8 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">13. Tungsten is used for bulb filament because it</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q13" value="A"> A. is cheap</div>
+                        <div class="option"><input type="radio" name="q13" value="B"> B. has low resistivity</div>
+                        <div class="option"><input type="radio" name="q13" value="C"> C. has high melting point</div>
+                        <div class="option"><input type="radio" name="q13" value="D"> D. is easily available</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">14. In a purely resistive circuit the energy supplied by the source is entirely converted into</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q14" value="A"> A. light only</div>
+                        <div class="option"><input type="radio" name="q14" value="B"> B. chemical energy</div>
+                        <div class="option"><input type="radio" name="q14" value="C"> C. heat</div>
+                        <div class="option"><input type="radio" name="q14" value="D"> D. magnetic energy</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">15. A 5 A fuse means the fuse wire will melt if current exceeds</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q15" value="A"> A. 2.5 A</div>
+                        <div class="option"><input type="radio" name="q15" value="B"> B. 5 A</div>
+                        <div class="option"><input type="radio" name="q15" value="C"> C. 10 A</div>
+                        <div class="option"><input type="radio" name="q15" value="D"> D. 1 A</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">SECTION-B: MINI-NUMERICALS (15 × 1 = 15)</div>
+                
+                <div class="question">
+                    <div class="question-number">16. Charge 120 C flows in 1 minute; current is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q16" value="A"> A. 120 A</div>
+                        <div class="option"><input type="radio" name="q16" value="B"> B. 2 A</div>
+                        <div class="option"><input type="radio" name="q16" value="C"> C. 0.5 A</div>
+                        <div class="option"><input type="radio" name="q16" value="D"> D. 1 A</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">17. A 6 V battery gives 3 J to each coulomb. Number of coulombs moved is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q17" value="A"> A. 0.5 C</div>
+                        <div class="option"><input type="radio" name="q17" value="B"> B. 2 C</div>
+                        <div class="option"><input type="radio" name="q17" value="C"> C. 18 C</div>
+                        <div class="option"><input type="radio" name="q17" value="D"> D. 0.33 C</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">18. Resistance of a 1 m nichrome wire (ρ = 100×10⁻⁸ Ω m, area 1 mm²) is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q18" value="A"> A. 0.1 Ω</div>
+                        <div class="option"><input type="radio" name="q18" value="B"> B. 1 Ω</div>
+                        <div class="option"><input type="radio" name="q18" value="C"> C. 10 Ω</div>
+                        <div class="option"><input type="radio" name="q18" value="D"> D. 100 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">19. A wire of 10 Ω is stretched uniformly to double length; new resistance</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q19" value="A"> A. 10 Ω</div>
+                        <div class="option"><input type="radio" name="q19" value="B"> B. 20 Ω</div>
+                        <div class="option"><input type="radio" name="q19" value="C"> C. 40 Ω</div>
+                        <div class="option"><input type="radio" name="q19" value="D"> D. 5 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">20. Equivalent resistance of 2 Ω and 3 Ω in parallel is about</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q20" value="A"> A. 5 Ω</div>
+                        <div class="option"><input type="radio" name="q20" value="B"> B. 1.2 Ω</div>
+                        <div class="option"><input type="radio" name="q20" value="C"> C. 1 Ω</div>
+                        <div class="option"><input type="radio" name="q20" value="D"> D. 6 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">21. Current through 10 Ω resistor connected to 5 V is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q21" value="A"> A. 2 A</div>
+                        <div class="option"><input type="radio" name="q21" value="B"> B. 0.5 A</div>
+                        <div class="option"><input type="radio" name="q21" value="C"> C. 50 A</div>
+                        <div class="option"><input type="radio" name="q21" value="D"> D. 1 A</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">22. Power of a bulb drawing 0.5 A at 220 V is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q22" value="A"> A. 110 W</div>
+                        <div class="option"><input type="radio" name="q22" value="B"> B. 440 W</div>
+                        <div class="option"><input type="radio" name="q22" value="C"> C. 1100 W</div>
+                        <div class="option"><input type="radio" name="q22" value="D"> D. 55 W</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">23. Energy consumed by a 60 W bulb in 10 h is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q23" value="A"> A. 0.6 kWh</div>
+                        <div class="option"><input type="radio" name="q23" value="B"> B. 6 kWh</div>
+                        <div class="option"><input type="radio" name="q23" value="C"> C. 600 Wh</div>
+                        <div class="option"><input type="radio" name="q23" value="D"> D. 60 kWh</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">24. A 1000 W heater works 2 h/day for 30 days; units consumed are</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q24" value="A"> A. 60</div>
+                        <div class="option"><input type="radio" name="q24" value="B"> B. 30</div>
+                        <div class="option"><input type="radio" name="q24" value="C"> C. 15</div>
+                        <div class="option"><input type="radio" name="q24" value="D"> D. 2</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">25. Heat produced in 5 Ω carrying 2 A for 5 s is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q25" value="A"> A. 10 J</div>
+                        <div class="option"><input type="radio" name="q25" value="B"> B. 50 J</div>
+                        <div class="option"><input type="radio" name="q25" value="C"> C. 100 J</div>
+                        <div class="option"><input type="radio" name="q25" value="D"> D. 25 J</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">26. Cost of 2 kWh energy at ₹5/unit is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q26" value="A"> A. ₹2.5</div>
+                        <div class="option"><input type="radio" name="q26" value="B"> B. ₹10</div>
+                        <div class="option"><input type="radio" name="q26" value="C"> C. ₹5</div>
+                        <div class="option"><input type="radio" name="q26" value="D"> D. ₹25</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">27. A 220 V, 100 W bulb has filament resistance</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q27" value="A"> A. 22 Ω</div>
+                        <div class="option"><input type="radio" name="q27" value="B"> B. 484 Ω</div>
+                        <div class="option"><input type="radio" name="q27" value="C"> C. 2.2 Ω</div>
+                        <div class="option"><input type="radio" name="q27" value="D"> D. 110 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">28. If 12 V produces 48 J heat in 4 s, the current is</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q28" value="A"> A. 1 A</div>
+                        <div class="option"><input type="radio" name="q28" value="B"> B. 2 A</div>
+                        <div class="option"><input type="radio" name="q28" value="C"> C. 3 A</div>
+                        <div class="option"><input type="radio" name="q28" value="D"> D. 4 A</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">29. Three 6 Ω resistors in parallel give equivalent resistance</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q29" value="A"> A. 18 Ω</div>
+                        <div class="option"><input type="radio" name="q29" value="B"> B. 2 Ω</div>
+                        <div class="option"><input type="radio" name="q29" value="C"> C. 3 Ω</div>
+                        <div class="option"><input type="radio" name="q29" value="D"> D. 0.5 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-number">30. A 9 V battery in series with 1 Ω and 2 Ω resistors gives current</div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q30" value="A"> A. 3 A</div>
+                        <div class="option"><input type="radio" name="q30" value="B"> B. 4.5 A</div>
+                        <div class="option"><input type="radio" name="q30" value="C"> C. 9 A</div>
+                        <div class="option"><input type="radio" name="q30" value="D"> D. 1 A</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" class="submit-btn" id="submitBtn">Submit Answers</button>
+        </form>
+        
+        <div id="results">
+            <div class="results-header">
+                <h2>Test Results - Chapter 11: Electricity</h2>
+                <div class="score">Your Score: <span id="scoreValue">0</span>/30</div>
+                <p>Percentage: <span id="percentage">0</span>%</p>
+            </div>
+            
+            <div class="summary">
+                <div class="summary-item correct">
+                    <div class="summary-value" id="correctCount">0</div>
+                    <div>Correct</div>
+                </div>
+                <div class="summary-item incorrect">
+                    <div class="summary-value" id="incorrectCount">0</div>
+                    <div>Incorrect</div>
+                </div>
+                <div class="summary-item unattempted-summary">
+                    <div class="summary-value" id="unattemptedCount">0</div>
+                    <div>Unattempted</div>
+                </div>
+            </div>
+            
+            <div id="detailedResults">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+            
+            <button class="restart-btn" id="restartBtn">Take Test Again</button>
+        </div>
+    </div>
 
-<script>
-/*********************************************************************/
-/*  Data: 30 questions, correct answer index, short explanation      */
-/*********************************************************************/
-const quiz = [
-{q:"The conventional direction of electric current is", o:["same as electron motion","opposite to electron motion","perpendicular to electron motion","none"], a:1, e:"Conventional current = flow of +ve charges, opposite to electrons."},
-{q:"Which device maintains a constant potential difference?", o:["Ammeter","Voltmeter","Cell/Battery","Rheostat"], a:2, e:"Cell/Battery provides constant p.d. by chemical action."},
-{q:"1 A current means", o:["1 C in 1 h","1 e⁻ in 1 s","1 C in 1 s","6×10¹⁸ e⁻ in 1 h"], a:2, e:"1 A = 1 coulomb per second."},
-{q:"SI unit of resistivity is", o:["Ω","Ω m⁻¹","Ω m","S m⁻¹"], a:2, e:"Resistivity unit = Ω m (R = ρl/A)."},
-{q:"A wire stretched to double length (uniformly) has resistance", o:["same","2×","4×","½×"], a:2, e:"Volume constant ⇒ A halves; R ∝ l² → 4× original."},
-{q:"Heat ratio series:parallel for two identical resistors on same source", o:["1:2","1:4","4:1","2:1"], a:1, e:"P_series = V²/2R, P_parallel = V²/(R/2) ⇒ ratio 1:4."},
-{q:"A fuse wire should possess", o:["high MP, high ρ","low MP, low ρ","low MP, high ρ","high MP, low ρ"], a:2, e:"Must melt easily (low MP) and heat fast (high ρ)."},
-{q:"Energy consumed by 1 kW appliance in 2 h is", o:["1 kWh","2 kWh","0.5 kWh","3.6 kWh"], a:1, e:"E = P×t = 1 kW × 2 h = 2 kWh."},
-{q:"100 W (220 V) bulb on 110 V consumes power", o:["100 W","75 W","50 W","25 W"], a:3, e:"P ∝ V²; halving V gives one-fourth power → 25 W."},
-{q:"Which does NOT represent electric power?", o:["I²R","V²/R","IR²","VI"], a:2, e:"IR² is dimensionally incorrect for power."},
-{q:"n equal R in parallel give equivalent", o:["nR","R/n","Rⁿ","n/R"], a:1, e:"1/R_eq = n/R ⇒ R_eq = R/n."},
-{q:"Resistance across diameter of 4 Ω loop", o:["4 Ω","2 Ω","1 Ω","8 Ω"], a:2, e:"Two 2 Ω halves in parallel → 1 Ω."},
-{q:"Tungsten used for filament because", o:["cheap","low ρ","high MP","abundant"], a:2, e:"High MP (≈3380 °C) allows white-hot glow."},
-{q:"In purely resistive circuit source energy becomes", o:["light only","chemical","heat","magnetic"], a:2, e:"100 % converted to heat (Joule heating)."},
-{q:"5 A fuse melts at current", o:["2.5 A","5 A","10 A","1 A"], a:1, e:"Rated value is maximum safe current."},
-{q:"120 C in 1 min → current", o:["120 A","2 A","0.5 A","1 A"], a:1, e:"I = Q/t = 120 C / 60 s = 2 A."},
-{q:"3 J per coulomb from 6 V battery → charge", o:["0.5 C","2 C","18 C","0.33 C"], a:0, e:"Q = W/V = 3 J / 6 V = 0.5 C."},
-{q:"1 m nichrome (ρ=100×10⁻⁸ Ω m, A=1 mm²) R≈", o:["0.1 Ω","1 Ω","10 Ω","100 Ω"], a:1, e:"R = ρl/A = 100×10⁻⁸×1 / 10⁻⁶ = 1 Ω."},
-{q:"10 Ω wire stretched to double length → R", o:["10 Ω","20 Ω","40 Ω","5 Ω"], a:2, e:"Volume constant ⇒ A halves; R ∝ l² → 40 Ω."},
-{q:"2 Ω ∥ 3 Ω ≈", o:["5 Ω","1.2 Ω","1 Ω","6 Ω"], a:1, e:"1/R = 1/2+1/3 = 5/6 ⇒ R = 1.2 Ω."},
-{q:"Current through 10 Ω on 5 V", o:["2 A","0.5 A","50 A","1 A"], a:1, e:"I = V/R = 5/10 = 0.5 A."},
-{q:"0.5 A at 220 V → power", o:["110 W","440 W","1100 W","55 W"], a:0, e:"P = VI = 220×0.5 = 110 W."},
-{q:"60 W bulb 10 h → energy", o:["0.6 kWh","6 kWh","600 Wh","60 kWh"], a:0, e:"E = 60 W × 10 h = 600 Wh = 0.6 kWh."},
-{q:"1 kW heater 2 h/day 30 days → units", o:["60","30","15","2"], a:0, e:"1×2×30 = 60 kWh (units)."},
-{q:"Heat in 5 Ω 2 A 5 s", o:["10 J","50 J","100 J","25 J"], a:2, e:"H = I²Rt = 4×5×5 = 100 J."},
-{q:"Cost of 2 kWh at ₹5/unit", o:["₹2.5","₹10","₹5","₹25"], a:1, e:"2 × 5 = ₹10."},
-{q:"Resistance of 100 W 220 V bulb", o:["22 Ω","484 Ω","2.2 Ω","110 Ω"], a:1, e:"R = V²/P = 220²/100 = 484 Ω."},
-{q:"48 J in 4 s 12 V → current", o:["1 A","2 A","3 A","4 A"], a:0, e:"P = 48/4 = 12 W; I = P/V = 12/12 = 1 A."},
-{q:"Three 6 Ω parallel → R", o:["18 Ω","2 Ω","3 Ω","0.5 Ω"], a:1, e:"1/R = 3/6 ⇒ R = 2 Ω."},
-{q:"9 V battery series 1 Ω + 2 Ω → current", o:["3 A","4.5 A","9 A","1 A"], a:0, e:"I = 9 V / 3 Ω = 3 A."}
-];
-
-/*********************************************************************/
-/*  Build form                                                       */
-/*********************************************************************/
-const form = document.getElementById('quizForm');
-quiz.forEach((qObj,i)=>{
-    const div=document.createElement('div'); div.className='qbox'; div.id=`div${i}`;
-    div.innerHTML=`<div class="qno">Q${i+1}. ${qObj.q}</div>`+
-        qObj.o.map((opt,idx)=>`<label><input type="radio" name="q${i}" value="${idx}">${opt}</label><br>`).join('');
-    form.appendChild(div);
-});
-
-/*********************************************************************/
-/*  Show result                                                      */
-/*********************************************************************/
-function showResult(){
-    const resDiv=document.getElementById('resultArea');
-    resDiv.innerHTML='';
-    let correct=0, unattempt=0, html='<h3>Result</h3><table cellpadding=6>';
-    for(let i=0;i<quiz.length;i++){
-        const sel=document.querySelector(`input[name="q${i}"]:checked`);
-        const div=document.getElementById(`div${i}`);
-        if(!sel){ 
-            unattempt++; 
-            html+=`<tr><td>Q${i+1}</td><td class="na">⚠ Not attempted</td><td>Correct: ${quiz[i].o[quiz[i].a]}</td><td>${quiz[i].e}</td></tr>`;
-            div.classList.add('na');
-        }else if(Number(sel.value)===quiz[i].a){ 
-            correct++; 
-            html+=`<tr><td>Q${i+1}</td><td class="ok">✅ Correct</td><td></td><td></td></tr>`;
-            div.classList.add('ok');
-        }else{ 
-            html+=`<tr><td>Q${i+1}</td><td class="ko">❌ Wrong (You: ${quiz[i].o[sel.value]})</td><td>Correct: ${quiz[i].o[quiz[i].a]}</td><td>${quiz[i].e}</td></tr>`;
-            div.classList.add('ko');
-        }
-    }
-    html+=`</table><p><strong>Total:</strong> ${correct} correct, ${quiz.length-correct-unattempt} wrong, ${unattempt} unattempted → Score: ${correct}/${quiz.length}</p>`;
-    resDiv.innerHTML=html;
-    window.scrollTo({top:resDiv.offsetTop,behavior:'smooth'});
-}
-</script>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Correct answers
+            const correctAnswers = {
+                q1: 'B', q2: 'C', q3: 'C', q4: 'C', q5: 'C',
+                q6: 'B', q7: 'C', q8: 'B', q9: 'D', q10: 'C',
+                q11: 'B', q12: 'B', q13: 'C', q14: 'C', q15: 'B',
+                q16: 'B', q17: 'B', q18: 'B', q19: 'C', q20: 'B',
+                q21: 'B', q22: 'A', q23: 'A', q24: 'A', q25: 'C',
+                q26: 'B', q27: 'B', q28: 'A', q29: 'B', q30: 'A'
+            };
+            
+            // Explanations
+            const explanations = {
+                q1: "By convention current is taken as the flow of positive charge, opposite to electron motion.",
+                q2: "A cell/battery uses chemical energy to do work on charges, keeping a constant potential difference.",
+                q3: "1 A = 1 coulomb of charge crossing a section every second.",
+                q4: "From R = ρl/A, ρ must have units of ohm-metre (Ω m).",
+                q5: "Volume stays the same ⇒ area halves; resistance ∝ length², so R becomes 4×.",
+                q6: "P_series = V²/2R, P_parallel = V²/(R/2); ratio is 1 : 4.",
+                q7: "It must melt quickly: low melting point and fairly high resistivity.",
+                q8: "E = P × t = 1 kW × 2 h = 2 kilowatt-hours.",
+                q9: "P ∝ V²; halving voltage gives one-fourth power → 25 W.",
+                q10: "IR² has units of volt-ampere-squared – not power.",
+                q11: "1/R_eq = n/R ⇒ R_eq = R/n.",
+                q12: "Two 2 Ω halves in parallel give 1 Ω.",
+                q13: "Very high melting point (≈ 3 380 °C) lets it glow white-hot without melting.",
+                q14: "Joule heating converts all electrical energy into heat.",
+                q15: "The wire is designed to melt if current exceeds ≈ 5 A.",
+                q16: "I = Q/t = 120 C / 60 s = 2 A.",
+                q17: "Q = W/V = 3 J / 6 V = 0.5 C.",
+                q18: "R = ρl/A = 100×10⁻⁸ × 1 / 10⁻⁶ = 1 Ω.",
+                q19: "Volume constant ⇒ area halves; R ∝ length² → 4× original → 40 Ω.",
+                q20: "1/R = 1/2 + 1/3 = 5/6 ⇒ R = 1.2 Ω.",
+                q21: "I = V/R = 5 V / 10 Ω = 0.5 A.",
+                q22: "P = VI = 220 × 0.5 = 110 W.",
+                q23: "E = 60 W × 10 h = 600 Wh = 0.6 kWh.",
+                q24: "1 kW × 2 h × 30 = 60 kWh (units).",
+                q25: "H = I²Rt = 4 × 5 × 5 = 100 J.",
+                q26: "2 × 5 = ₹10.",
+                q27: "R = V²/P = 220²/100 = 484 Ω.",
+                q28: "P = 48 J / 4 s = 12 W; I = P/V = 12/12 = 1 A.",
+                q29: "1/R = 3/6 ⇒ R = 2 Ω.",
+                q30: "I = 9 V / 3 Ω = 3 A."
+            };
+            
+            // Questions text
+            const questions = {
+                q1: "The conventional direction of electric current is",
+                q2: "Which device maintains a constant potential difference across a conductor?",
+                q3: "A current of 1 A means",
+                q4: "The SI unit of electrical resistivity is",
+                q5: "A wire is stretched to double its length. Its resistance",
+                q6: "Two identical resistors are first joined in series and then in parallel to the same source. The ratio of heat produced in series to parallel is",
+                q7: "A fuse wire should have",
+                q8: "The power of an appliance is 1 kW. Energy consumed in 2 h is",
+                q9: "A 100 W–220 V bulb is connected to 110 V. The power consumed will be",
+                q10: "Which does NOT represent electric power?",
+                q11: "When n equal resistors R are connected in parallel, their equivalent resistance is",
+                q12: "A wire of resistance 4 Ω is bent into a closed loop; resistance across any diameter is",
+                q13: "Tungsten is used for bulb filament because it",
+                q14: "In a purely resistive circuit the energy supplied by the source is entirely converted into",
+                q15: "A 5 A fuse means the fuse wire will melt if current exceeds",
+                q16: "Charge 120 C flows in 1 minute; current is",
+                q17: "A 6 V battery gives 3 J to each coulomb. Number of coulombs moved is",
+                q18: "Resistance of a 1 m nichrome wire (ρ = 100×10⁻⁸ Ω m, area 1 mm²) is",
+                q19: "A wire of 10 Ω is stretched uniformly to double length; new resistance",
+                q20: "Equivalent resistance of 2 Ω and 3 Ω in parallel is about",
+                q21: "Current through 10 Ω resistor connected to 5 V is",
+                q22: "Power of a bulb drawing 0.5 A at 220 V is",
+                q23: "Energy consumed by a 60 W bulb in 10 h is",
+                q24: "A 1000 W heater works 2 h/day for 30 days; units consumed are",
+                q25: "Heat produced in 5 Ω carrying 2 A for 5 s is",
+                q26: "Cost of 2 kWh energy at ₹5/unit is",
+                q27: "A 220 V, 100 W bulb has filament resistance",
+                q28: "If 12 V produces 48 J heat in 4 s, the current is",
+                q29: "Three 6 Ω resistors in parallel give equivalent resistance",
+                q30: "A 9 V battery in series with 1 Ω and 2 Ω resistors gives current"
+            };
+            
+            // Options text
+            const options = {
+                q1: {
+                    A: "the direction in which electrons move",
+                    B: "opposite to the direction of motion of electrons",
+                    C: "perpendicular to the direction of motion of electrons",
+                    D: "none of these"
+                },
+                q2: {
+                    A: "Ammeter",
+                    B: "Voltmeter",
+                    C: "Cell / Battery",
+                    D: "Rheostat"
+                },
+                q3: {
+                    A: "1 C of charge flows in 1 h",
+                    B: "1 electron flows in 1 s",
+                    C: "1 C of charge flows in 1 s",
+                    D: "6 × 10¹⁸ electrons flow in 1 h"
+                },
+                q4: {
+                    A: "Ω",
+                    B: "Ω m⁻¹",
+                    C: "Ω m",
+                    D: "S m⁻¹"
+                },
+                q5: {
+                    A: "remains same",
+                    B: "becomes 2×",
+                    C: "becomes 4×",
+                    D: "becomes ½×"
+                },
+                q6: {
+                    A: "1 : 2",
+                    B: "1 : 4",
+                    C: "4 : 1",
+                    D: "2 : 1"
+                },
+                q7: {
+                    A: "high melting point, high resistivity",
+                    B: "low melting point, low resistivity",
+                    C: "low melting point, high resistivity",
+                    D: "high melting point, low resistivity"
+                },
+                q8: {
+                    A: "1 kWh",
+                    B: "2 kWh",
+                    C: "0.5 kWh",
+                    D: "3.6 kWh"
+                },
+                q9: {
+                    A: "100 W",
+                    B: "75 W",
+                    C: "50 W",
+                    D: "25 W"
+                },
+                q10: {
+                    A: "I²R",
+                    B: "V²/R",
+                    C: "IR²",
+                    D: "VI"
+                },
+                q11: {
+                    A: "nR",
+                    B: "R/n",
+                    C: "Rⁿ",
+                    D: "n/R"
+                },
+                q12: {
+                    A: "4 Ω",
+                    B: "2 Ω",
+                    C: "1 Ω",
+                    D: "8 Ω"
+                },
+                q13: {
+                    A: "is cheap",
+                    B: "has low resistivity",
+                    C: "has high melting point",
+                    D: "is easily available"
+                },
+                q14: {
+                    A: "light only",
+                    B: "chemical energy",
+                    C: "heat",
+                    D: "magnetic energy"
+                },
+                q15: {
+                    A: "2.5 A",
+                    B: "5 A",
+                    C: "10 A",
+                    D: "1 A"
+                },
+                q16: {
+                    A: "120 A",
+                    B: "2 A",
+                    C: "0.5 A",
+                    D: "1 A"
+                },
+                q17: {
+                    A: "0.5 C",
+                    B: "2 C",
+                    C: "18 C",
+                    D: "0.33 C"
+                },
+                q18: {
+                    A: "0.1 Ω",
+                    B: "1 Ω",
+                    C: "10 Ω",
+                    D: "100 Ω"
+                },
+                q19: {
+                    A: "10 Ω",
+                    B: "20 Ω",
+                    C: "40 Ω",
+                    D: "5 Ω"
+                },
+                q20: {
+                    A: "5 Ω",
+                    B: "1.2 Ω",
+                    C: "1 Ω",
+                    D: "6 Ω"
+                },
+                q21: {
+                    A: "2 A",
+                    B: "0.5 A",
+                    C: "50 A",
+                    D: "1 A"
+                },
+                q22: {
+                    A: "110 W",
+                    B: "440 W",
+                    C: "1100 W",
+                    D: "55 W"
+                },
+                q23: {
+                    A: "0.6 kWh",
+                    B: "6 kWh",
+                    C: "600 Wh",
+                    D: "60 kWh"
+                },
+                q24: {
+                    A: "60",
+                    B: "30",
+                    C: "15",
+                    D: "2"
+                },
+                q25: {
+                    A: "10 J",
+                    B: "50 J",
+                    C: "100 J",
+                    D: "25 J"
+                },
+                q26: {
+                    A: "₹2.5",
+                    B: "₹10",
+                    C: "₹5",
+                    D: "₹25"
+                },
+                q27: {
+                    A: "22 Ω",
+                    B: "484 Ω",
+                    C: "2.2 Ω",
+                    D: "110 Ω"
+                },
+                q28: {
+                    A: "1 A",
+                    B: "2 A",
+                    C: "3 A",
+                    D: "4 A"
+                },
+                q29: {
+                    A: "18 Ω",
+                    B: "2 Ω",
+                    C: "3 Ω",
+                    D: "0.5 Ω"
+                },
+                q30: {
+                    A: "3 A",
+                    B: "4.5 A",
+                    C: "9 A",
+                    D: "1 A"
+                }
+            };
+            
+            let score = 0;
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let unattemptedCount = 0;
+            let resultsHTML = "";
+            
+            // Check each question
+            for (let i = 1; i <= 30; i++) {
+                const questionId = `q${i}`;
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const userAnswer = selectedOption ? selectedOption.value : null;
+                const correctAnswer = correctAnswers[questionId];
+                
+                let resultClass = "";
+                let resultText = "";
+                let indicatorClass = "";
+                
+                if (userAnswer === null) {
+                    resultClass = "unattempted";
+                    resultText = "Not attempted";
+                    indicatorClass = "unattempted-indicator";
+                    unattemptedCount++;
+                } else if (userAnswer === correctAnswer) {
+                    resultClass = "correct-answer";
+                    resultText = "Correct";
+                    indicatorClass = "correct";
+                    score++;
+                    correctCount++;
+                } else {
+                    resultClass = "incorrect-answer";
+                    resultText = "Incorrect";
+                    indicatorClass = "incorrect";
+                    incorrectCount++;
+                }
+                
+                resultsHTML += `
+                    <div class="results-question">
+                        <div class="question-number">
+                            <span class="status-indicator ${indicatorClass}"></span>
+                            ${i}. ${questions[questionId]}
+                        </div>
+                        <p><strong>Your answer:</strong> <span class="${resultClass}">${userAnswer ? userAnswer + '. ' + options[questionId][userAnswer] : 'Not attempted'}</span></p>
+                        <p><strong>Correct answer:</strong> <span class="correct-answer">${correctAnswer}. ${options[questionId][correctAnswer]}</span></p>
+                        <div class="explanation">
+                            <strong>Explanation:</strong> ${explanations[questionId]}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Calculate percentage
+            const percentage = ((score / 30) * 100).toFixed(1);
+            
+            // Update results
+            document.getElementById('scoreValue').textContent = score;
+            document.getElementById('percentage').textContent = percentage;
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('incorrectCount').textContent = incorrectCount;
+            document.getElementById('unattemptedCount').textContent = unattemptedCount;
+            document.getElementById('detailedResults').innerHTML = resultsHTML;
+            
+            // Show results
+            document.getElementById('results').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Restart button functionality
+        document.getElementById('restartBtn').addEventListener('click', function() {
+            // Reset all radio buttons
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.checked = false;
+            });
+            
+            // Hide results and scroll to top
+            document.getElementById('results').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
